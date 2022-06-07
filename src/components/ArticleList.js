@@ -1,10 +1,13 @@
 import React from "react";
 import Article from "./Article"
 
-function ArticleList() {
+function ArticleList({articles}) {
+    const allArticles = articles.map((article) => {
+        return <Article key={article.id} title={article.title} date={article.date} preview={article.preview}/>
+    });
     return (
         <main>
-            <Article key="tmp title" title="tmp title" date="6/7/2022" preview="this is a preview"/>
+        {allArticles}
         </main>
     );
 }
